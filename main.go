@@ -63,7 +63,7 @@ func loadConfig() (*Config, error) {
 }
 
 func setGitConfig(key, value string) {
-	cmd := exec.Command("git", "config", "--global", key, value)
+	cmd := exec.Command("git", "config", "--local", key, value)
 	if err := cmd.Run(); err != nil {
 		log.Fatalf("Failed to set %s: %v", key, err)
 	}
